@@ -80,7 +80,7 @@ function targetIsStaticFn(t) {
  * class App {}
  */
 export function Resolve(resolveName: string = null){
-    return function(target: any, resolveFnName: string, {value: resolveFn}){
+    return function(target: any, resolveFnName: string, resolveFn){
         if (!targetIsStaticFn(target)) {
             throw new Error('@Resolve target must be a static method.');
         }
@@ -155,5 +155,3 @@ componentHooks.beforeCtrlInvoke((caller: any, injects: string[], controller: any
     const resolvesMap = componentStore.get(resolvedMapKey, controller);
     Object.assign(locals, resolvesMap);
 });
-
-

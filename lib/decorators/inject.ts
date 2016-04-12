@@ -22,7 +22,7 @@ import {componentHooks} from './component';
 // ## @Inject
 // Takes an array of injects
 export function Inject( ...injects: any[] ){
-	return function(t1:any, name?: string, {value: t2} = {value: undefined}){
+	return function(t1:any, name?: string, t2){
 
 		// We can use @Inject on classes and--in the case of ui-router @Resolve decorator--static methods.
 		// If we use @Inject on a static method then 3 arguments are passed in, instead of just 1.
